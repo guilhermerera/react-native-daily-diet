@@ -1,10 +1,15 @@
-import { Text } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { Container, MainHeader, Logo, ProfilePic } from "./styles";
+import LogoImg from "../../assets/images/Logo.png";
 
 export default function Home() {
 	return (
-		<SafeAreaView>
-			<Text>This will be a home screen</Text>
-		</SafeAreaView>
+		<Container>
+			<MainHeader>
+				<Logo source={LogoImg} />
+				<ProfilePic
+					source={{ uri: "https://xsgames.co/randomusers/avatar.php?g=pixel" }}
+				/>
+			</MainHeader>
+		</Container>
 	);
 }
