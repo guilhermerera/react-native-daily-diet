@@ -15,7 +15,7 @@ export default {
 		GRAY_500: "#5C6265",
 		GRAY_400: "#B9BBBC",
 		GRAY_300: "#DDDEDF",
-		GRAY_200: "#EFF0D0",
+		GRAY_200: "#EFF0F0",
 		GRAY_100: "#FAFAFA"
 	},
 	FONT_FAMILY: {
@@ -27,7 +27,8 @@ export default {
 		SM: 14,
 		MD: 16,
 		LG: 18,
-		XL: 24,
-		XXL: 32
+		XL: 20,
+		XXL: 24,
+		XXXL: 32
 	}
 };

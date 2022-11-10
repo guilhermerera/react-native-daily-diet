@@ -25,3 +25,8 @@ export const ProfilePic = styled.Image`
 	border-radius: 9999px;
 	border: 2px solid ${({ theme }) => theme.COLORS.GRAY_600};
 `;
+
+export const BodyContent = styled.View`
+	width: 100%;
+	margin-top: 36px;
+`;
