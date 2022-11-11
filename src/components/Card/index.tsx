@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import {
 	Container,
 	Title,
@@ -6,20 +7,43 @@ import {
 	ContainerSize
 } from "./styles";
 
-type CardProps = {
-	title: string;
-	description: string;
+type CardRootProps = {
 	color?: ContainerColors;
 	size?: ContainerSize;
+	children: ReactNode;
 };
 
-export default function Card(props: CardProps) {
-	const { title, description, color = "PRIMARY", size = "lg" } = props;
+function CardRoot(props: CardRootProps) {
+	const { color = "PRIMARY", size = "lg", children } = props;
 
 	return (
 		<Container color={color} size={size}>
-			<Title size={size}>{title}</Title>
-			<Description>{description}</Description>
+			{children}
 		</Container>
 	);
 }
+
+type CardTitleProps = {
+	title: string;
+	size?: ContainerSize;
+};
+
+function CardTitle(props: CardTitleProps) {
+	const { size = "lg", title } = props;
+	return <Title size={size}>{title}</Title>;
+}
+
+type CardDescriptionProps = {
+	description: string;
+};
+
+function CardDescription(props: CardDescriptionProps) {
+	const { description } = props;
+	return <Description>{description}</Description>;
+}
+
+export const Card = {
+	Root: CardRoot,
+	Title: CardTitle,
+	Description: CardDescription
+};
