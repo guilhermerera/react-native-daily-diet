@@ -3,13 +3,15 @@ import {
 	Container,
 	Title,
 	Description,
-	ContainerColors,
-	ContainerSize
+	ArrowUp,
+	StyledArrowLeft
 } from "./styles";
+import { Colors, Sizes } from "../../@types/componentTypes";
+import { TouchableOpacityProps } from "react-native";
 
-type CardRootProps = {
-	color?: ContainerColors;
-	size?: ContainerSize;
+type CardRootProps = TouchableOpacityProps & {
+	color?: Colors;
+	size?: Sizes;
 	children: ReactNode;
 };
 
@@ -17,7 +19,7 @@ function CardRoot(props: CardRootProps) {
 	const { color = "PRIMARY", size = "lg", children } = props;
 
 	return (
-		<Container color={color} size={size}>
+		<Container activeOpacity={0.7} color={color} size={size}>
 			{children}
 		</Container>
 	);
@@ -25,7 +27,7 @@ function CardRoot(props: CardRootProps) {
 
 type CardTitleProps = {
 	title: string;
-	size?: ContainerSize;
+	size?: Sizes;
 };
 
 function CardTitle(props: CardTitleProps) {
@@ -42,8 +44,28 @@ function CardDescription(props: CardDescriptionProps) {
 	return <Description>{description}</Description>;
 }
 
+type ArrowUpProps = {
+	color?: Colors;
+};
+
+function ArrowUpIcon(props: ArrowUpProps) {
+	const { color = "PRIMARY" } = props;
+	return <ArrowUp color={color} />;
+}
+
+type ArrowLeftProps = {
+	color?: Colors;
+};
+
+function ArrowLeftIcon(props: ArrowLeftProps) {
+	const { color = "PRIMARY" } = props;
+	return <StyledArrowLeft color={color} />;
+}
+
 export const Card = {
 	Root: CardRoot,
 	Title: CardTitle,
-	Description: CardDescription
+	Description: CardDescription,
+	ArrowUpIcon: ArrowUpIcon,
+	ArrowLeftIcon: ArrowLeftIcon
 };

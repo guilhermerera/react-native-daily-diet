@@ -1,15 +1,14 @@
 import styled, { css } from "styled-components/native";
-import { View, Text } from "react-native";
-
-export type ContainerColors = "PRIMARY" | "SECONDARY" | "GRAY";
-export type ContainerSize = "lg" | "sm";
+import { Text, TouchableOpacity } from "react-native";
+import { ArrowUpRight, ArrowLeft } from "phosphor-react-native";
+import { Colors, Sizes } from "../../@types/componentTypes";
 
 type ContainerProps = {
-	color: ContainerColors;
-	size: ContainerSize;
+	color: Colors;
+	size: Sizes;
 };
 
-export const Container = styled(View)<ContainerProps>`
+export const Container = styled(TouchableOpacity)<ContainerProps>`
 	position: relative;
 	width: 100%;
 	border-radius: 8px;
@@ -26,7 +25,7 @@ export const Container = styled(View)<ContainerProps>`
 `;
 
 type TitleProps = {
-	size: ContainerSize;
+	size: Sizes;
 };
 
 export const Title = styled(Text)<TitleProps>`
@@ -46,4 +45,30 @@ export const Description = styled.Text`
 		font-size: ${theme.FONT_SIZE.SM}px;
 		line-height: ${theme.FONT_SIZE.SM * 1.3}px;
 	`}
+`;
+
+export const ArrowUp = styled(ArrowUpRight).attrs(({ theme, color }) => ({
+	color:
+		color === "PRIMARY"
+			? theme.COLORS.GREEN_700
+			: color === "SECONDARY"
+			? theme.COLORS.RED_700
+			: theme.COLORS.GRAY_700
+}))`
+	position: absolute;
+	top: 8px;
+	right: 8px;
+`;
+
+export const StyledArrowLeft = styled(ArrowLeft).attrs(({ theme, color }) => ({
+	color:
+		color === "PRIMARY"
+			? theme.COLORS.GREEN_700
+			: color === "SECONDARY"
+			? theme.COLORS.RED_700
+			: theme.COLORS.GRAY_700
+}))`
+	position: absolute;
+	top: 4px;
+	left: 4px;
 `;
