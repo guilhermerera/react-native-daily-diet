@@ -1,4 +1,4 @@
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export const Container = styled(SafeAreaView)`
@@ -29,4 +29,24 @@ export const ProfilePic = styled.Image`
 export const BodyContent = styled.View`
 	width: 100%;
 	margin-top: 36px;
+`;
+
+export const MealListSection = styled.View`
+	width: 100%;
+	height: 100%;
+	padding: 40px 0px 20px;
+`;
+
+export const MealListHeader = styled.View`
+	margin-bottom: 32px;
+`;
+
+export const MealListHeaderTitle = styled.Text`
+	${({ theme }) => css`
+		color: ${theme.COLORS.GRAY_700};
+		font-size: ${theme.FONT_SIZE.MD}px;
+		line-height: ${theme.FONT_SIZE.MD * 1.3}px;
+		font-family: ${theme.FONT_FAMILY.REGULAR};
+		margin-bottom: 8px;
+	`}
 `;
