@@ -13,8 +13,20 @@ import { Card } from "../../components/Card";
 import { Button } from "../../components/Button";
 
 import LogoImg from "../../assets/images/Logo.png";
+import MealListBody, { MealListData } from "../../components/MealListBody";
 
 export default function Home() {
+	const dataObj: MealListData[] = [
+		{
+			title: "12.08.22",
+			data: [
+				{ title: "Pão de Queijo", time: "8:00", diet: false },
+				{ title: "Salada", time: "13:00", diet: true },
+				{ title: "Lanche", time: "17:30", diet: true }
+			]
+		}
+	];
+
 	return (
 		<Container>
 			<MainHeader>
@@ -36,6 +48,7 @@ export default function Home() {
 							<Button.PlusIcon />
 						</Button.Root>
 					</MealListHeader>
+					<MealListBody data={dataObj} />
 				</MealListSection>
 			</BodyContent>
 		</Container>
