@@ -20,7 +20,15 @@ export default function Home() {
 		{
 			title: "12.08.22",
 			data: [
-				{ title: "Pão de Queijo", time: "8:00", diet: false },
+				{ title: "Pão de Queijo", time: "08:00", diet: false },
+				{ title: "Salada", time: "13:00", diet: true },
+				{ title: "Lanche", time: "17:30", diet: true }
+			]
+		},
+		{
+			title: "11.08.22",
+			data: [
+				{ title: "Pão de Queijo", time: "08:00", diet: false },
 				{ title: "Salada", time: "13:00", diet: true },
 				{ title: "Lanche", time: "17:30", diet: true }
 			]

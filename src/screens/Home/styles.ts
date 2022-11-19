@@ -38,7 +38,7 @@ export const MealListSection = styled.View`
 `;
 
 export const MealListHeader = styled.View`
-	margin-bottom: 32px;
+	margin-bottom: 20px;
 `;
 
 export const MealListHeaderTitle = styled.Text`
